@@ -1,0 +1,16 @@
+const form = document.getElementById("create-task-form");
+const taskList = document.getElementById("tasks");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); // prevent the default form submission behavior
+  
+  const taskInput = document.getElementById("new-task-description");
+  const taskText = taskInput.value;
+  
+  const taskItem = document.createElement("li");
+  taskItem.innerText = taskText;
+  
+  taskList.appendChild(taskItem);
+  
+  taskInput.value = ""; // clear the input field
+});
